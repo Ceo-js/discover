@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Discover</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="src/assets/pix/favicon/favicon.svg" />
+    <link rel="stylesheet" href="src/assets/css/style.css">
+</head>
+  <body>
+    <appbar>
+        <appbar-left>
+            <img src="src/assets/pix/natal/adornment-christmas-decoration-svgrepo-com.svg" alt="" width="35px" height="35px">
+        </appbar-left>
+        <appbar-center>
+            <h1>Sammarco</h1>
+        </appbar-center>
+        <appbar-right>
+            <img class="drawertoggle" src="src/assets/pix/menu/menu-navigation-direction-arrow-location-map-svgrepo-com.svg" alt="" width="35px" height="35px">
+        </appbar-right>
+    </appbar>
+    <drawer>
+        <drawer-head>
+            <profile>
+                <img class="drawerswitch" src="src/assets/pix/natal/adornment-christmas-decoration-svgrepo-com.svg" alt="" width="35px" height="35px">
+            </profile>
+        </drawer-head>
+        <drawer-body>
+            <!-- <spaced></spaced> -->
+            <li>
+                <pholder>
+                    <img src="src/assets/pix/natal/buildings-cabin-house-svgrepo-com.svg" alt="" width="35px" height="35px">
+                </pholder>
+                <option onclick="window.open('http://192.168.15.16:8080', '_self');">192.168.15.16:8080</option>
+            </li>
+            <li>
+                <pholder>
+                    <img src="src/assets/pix/natal/adornment-christmas-decoration-svgrepo-com.svg" alt="" width="35px" height="35px">
+                </pholder>
+                <option onclick="window.open('https://ceo-js.github.io/discover', '_self');">ceo-js.github.io/discover</option>
+            </li>
+            <li>
+                <pholder>
+                    <img class="menu3" src="src/assets/pix/natal/christmas-clothing-garment-svgrepo-com.svg" alt="" width="35px" height="35px">
+                </pholder>
+                <option>Opção 3</option>
+            </li>
+            <spaced></spaced>
+            <details class="SelecionandoElementos">
+                <summary>Selecionando elementos</summary>
+                <menu>getElementById</menu>
+                <menu>getElementByClassName</menu>
+                <menu>getElementByTagName</menu>
+                <menu>querySelector</menu>
+                <menu>querySelectorAll</menu>
+                <menu>Qual usar?</menu>
+            </details>
+            
+            <details id="ManipulandoConteudos">
+                <summary>Manipulando conteúdos</summary>
+                <p></p>
+                <pp></pp>
+                <pp></pp>
+                <p></p>
+            </details>
+        </drawer-body>
+        <drawer-footer></drawer-footer>
+    </drawer>
+    <app></app>
+    <!-- <script src="src/assets/scripts/main.js"></script> -->
+    <script>
+        var loadjs = document.createElement( "script" );
+        var mainjs = document.createElement( "script" );
+        loadjs.src = "./src/assets/scripts/js.js";
+        mainjs.src = "./main.js";
+        document.body.appendChild( loadjs );
+        document.body.appendChild( mainjs );
+    </script>
+  </body>
+</html>

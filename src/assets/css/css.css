@@ -1,0 +1,255 @@
+
+
+:root {
+  --colorPrimary: #1b1d21;
+  --colorPrimaryDark: #212329;
+  --colorAccent: #ff9e00;
+  --appbar: #15161c;
+  --sidebar: #181a21;
+  --select: #1d1e27;
+  --panel: #21222c;
+  --bg: #282a36;
+  --shadow: #00000099;
+}
+
+/* scroller */
+/* width */
+::-webkit-scrollbar { width: 15px; }
+/* Track */
+::-webkit-scrollbar-track { background: #121212; }
+/* Handle */
+::-webkit-scrollbar-thumb { background: #424242; }
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover { background: #555; }
+/* scroller ---------------- */
+
+*, *::before, *::after {
+  margin: 0; padding: 0; box-sizing: border-box;
+  color: var(--colorAccent);
+}
+
+body {
+  height: 100vh;
+  background: var(--bg);
+}
+
+scaffold {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  /* margin: 0 -15px; */
+  width: 100%;
+}
+
+column {
+  display: block;
+  width: 100%;
+  padding: 0 15px;
+}
+
+appbar {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 80px;
+  background: var(--appbar);
+  box-shadow: var(--shadow) 0 3px 3px;
+  z-index: 33;
+}
+
+sidebar {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background: var(--appbar);
+}
+
+bg {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background: var(--appbar);
+}
+
+lnk {
+	cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* media */
+@media (min-width: 576px) {
+    scaffold {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    scaffold {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    scaffold {
+        max-width: 960px;
+    }
+
+    column {
+        -ms-flex: 0 0 66.666667%;
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+    }
+}
+
+@media (min-width: 1200px) {
+    scaffold {
+        max-width: 1140px;
+    }
+}
+
+
+/* ------------------------------
+[ BTN ] */
+/* pulsing button */
+@keyframes pulse-orange {
+    0% {
+        transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(255, 121, 63, 0.7);
+	}
+	
+	70% {
+        transform: scale(1);
+		box-shadow: 0 0 0 10px rgba(255, 121, 63, 0);
+	}
+	
+	100% {
+        transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(255, 121, 63, 0);
+	}
+}
+
+btn {
+    transform: scale(1);
+    cursor: pointer;
+    transition: .1s ease-in-out;
+    /* animation: pulse-orange 2s infinite; */
+    text-decoration: none;
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+    font: inherit;
+    vertical-align: baseline;
+    color: #2e82bc;
+    outline: 0;
+    line-height: 1;
+    text-align: center;
+    position: relative!important;
+    display: inline-block!important;
+    border-style: solid;
+    width: clamp( 264.60px, 60%, 425px );
+    padding-left: 0!important;
+    padding-right: 0!important;
+    margin-bottom: 10px;
+    padding: 22px 44px;
+    border-color: #ff5535;
+    box-shadow: 0 1px 1px 0 rgb(0 0 0 / 50%);
+    text-decoration: none!important;
+    background: transparent;
+    border: rgb( 179, 0, 0 ) 3px solid;
+    border-radius: 5rem;
+}
+
+btn-t {
+    -webkit-font-smoothing: antialiased;
+    text-align: center;
+    margin: 0;
+    border: 0;
+    font: inherit;
+    display: block;
+    position: relative;
+    z-index: 1;
+    padding: 0 15px;
+    white-space: normal;
+    font-size: 22px;
+    font-size: 1.63vw;
+    font-size: clamp( 14px, 1.63vw, 22px );
+    font-family: Roboto, Sans-serif;
+    font-weight: 400;
+    text-decoration: none;
+    width: 100%;
+    transition: .05s ease-out;
+}
+
+btn-t2 {
+    -webkit-font-smoothing: antialiased;
+    text-align: center;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+    display: block;
+    position: relative;
+    z-index: 1;
+    margin: 0.2em 0 -0.5em;
+    font-size: 15px;
+    color: #f5e051;
+    font-weight: 700;
+    font-style: italic;
+    text-shadow: #000 0 1px 0;
+}
+
+btn {
+    background: transparent;
+    border: rgb( 179, 0, 0 ) 3px solid;
+    border-radius: 5rem;
+}
+
+btn:hover {
+    background-image: 
+        linear-gradient(
+            rgb(185, 0, 82) 0%, 
+            rgb(199, 0, 0) 100%
+            );
+}
+
+btn:focus {
+    background-image: 
+        linear-gradient(
+            rgb(185, 0, 82) 0%, 
+            rgb(199, 0, 0) 100%
+            );
+}
+
+btn:focus-visible {
+    border-color: #e8e6e3;
+}
