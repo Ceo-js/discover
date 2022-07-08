@@ -6,10 +6,22 @@ window.addEventListener( "load", () => {
     var drawerSwitch = document.querySelector( ".drawerswitch" );
     var drawerToggle = document.querySelector( ".drawertoggle" );
     var menu3 = document.querySelector( ".menu3" );
-    var details1 = document.querySelector( ".SelecionandoElementos" );
+    var sidebar = document.querySelector( "sidebar" );
     var options = document.querySelectorAll( "option" );
     var drawer = document.querySelector( "drawer" );
     var drawerObserver = 0;
+
+    function toggle( v ) {
+        const bkp = v.getAttribute("display");
+        print(bkp);
+        if( v.style.display !== "none" ) {
+            v.style.display = "none";
+            print(bkp + "if");
+        } else {
+            v.style.display = bkp;
+            print(bkp + "else");
+        }
+    }
 
     function print( v ) { console.log( v ); }
     drawer.style.width = "0";
@@ -47,10 +59,8 @@ window.addEventListener( "load", () => {
     } );
 
     menu3.addEventListener( "click", () => {
-        details1.style.display = "block";
-        console.log( "oi" );
+        toggle( sidebar );
     } );
-
     
 
 

@@ -170,15 +170,29 @@ drawer-footer {
     background: #181923;
 }
 
-details {
-    display: none;
+sidebar {
+    display: grid; 
     width: 100%;
     height: 100%;
-    padding: 68px 8px 0 0;
     position: absolute;
     top: 0;
     left: 68px;
-    background: #122e;
+    background: #000;
+    transition: .3s;
+}
+
+details {
+    display: block;
+    width: 100%;
+    /* height: 100%; */
+    padding: 8px 8px 0 0;
+    background: #1e1f29;
     transition: .3s;
     user-select: none;
+}
+
+summary {
+    padding: 8px;
+    height: 5ch;
+    background: #21222c;
 }
