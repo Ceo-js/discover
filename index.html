@@ -7,7 +7,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="src/assets/pix/favicon/favicon.svg" />
-    <!-- <link rel="stylesheet" href="src/assets/css/style.css"> -->
+    <link rel="stylesheet" href="src/assets/css/cores.css">
     <style> /* style.css */
 
 
@@ -339,9 +339,9 @@ details > summary:first-of-type {
                 <details>
                     <summary>Praticando</summary>
                     <d-home>
+                        <input type="text">
                         <menu>Desafio modal</menu>
                         <menu>Resolução desafio modal</menu>
-                        <menu>Despedida</menu>
                     </d-home>
                 </details>
             </sidebar>
@@ -437,6 +437,19 @@ menu3.addEventListener( "click", () => {
 
 
 } );
+    </script>
+    <script>    /* ---------------- console */
+        const element = document.querySelector( "body" );
+        var menu = document.querySelector( "input" );
+
+        function print( v ) { console.log( v ); }
+
+        menu.onkeypress = function(event) {
+            print( event.target.value );
+        }
+
+        print( element.classList );
+
     </script>
   </body>
 </html>
