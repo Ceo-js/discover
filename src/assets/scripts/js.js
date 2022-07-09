@@ -13,18 +13,16 @@ window.addEventListener( "load", () => {
 
     function toggle( v ) {
         const bkp = v.getAttribute("display");
-        print(bkp);
+        
         if( v.style.display !== "none" ) {
             v.style.display = "none";
-            print(bkp + "if");
         } else {
             v.style.display = bkp;
-            print(bkp + "else");
         }
     }
 
     function print( v ) { console.log( v ); }
-    drawer.style.width = "0";
+    // drawer.style.width = "0";
 
     
     drawerSwitch.addEventListener( "click", () => {
@@ -44,18 +42,23 @@ window.addEventListener( "load", () => {
     drawerToggle.addEventListener( "click", () => {
         switch( drawerObserver ) {
             case 0: drawer.style.width = "68px";
+                    drawer.style.display = "block";
                     drawerObserver = 2;
                     options.forEach( el => el.style.display = "none" );
                 break;
             case 1: drawer.style.width = "68px";
+                    drawer.style.display = "block";
                     drawerObserver = 2;
                     options.forEach( el => el.style.display = "none" );
                 break;
             case 2: drawer.style.width = "0";
+                    drawer.style.display = "none";
                     drawerObserver = 1;
                     options.forEach( el => el.style.display = "none" );
                 break;
         }
+        // toggle( drawer );
+        // drawer.style.width = "68px";
     } );
 
     menu3.addEventListener( "click", () => {

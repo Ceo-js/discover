@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -5,7 +7,235 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="src/assets/pix/favicon/favicon.svg" />
-    <link rel="stylesheet" href="src/assets/css/style.css">
+    <!-- <link rel="stylesheet" href="src/assets/css/style.css"> -->
+    <style> /* style.css */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+:root {
+    --wfundo: #202020;
+    --wplano: #2b2b2b;
+    --wselect: #3a3a3a;
+    /* # googleDark */
+    --plano-dark: #1f2125;
+    --plano: #dfe1e5;
+    --ground-dark: #32363a;
+    --ground: #ffffff;
+    --groundd-dark: #56575b;
+    --groundd: #55565a;
+    --card-dark: #282c2f;
+    --card: #f1f3f4;    
+    --cardTxt-dark: #9ba1a4;
+    --cardTxt: #7f8484;
+    --Txt-dark: #fefefe;
+    --Txt: #414344;
+    --Txt2-dark: #8a8c90;
+    --Txt2: #606264;
+    --red: #ff5a52;
+    --yeellow: #e7c029;
+    --green: #53c22a;
+
+    --body: radial-gradient(
+        circle at center,
+        #282a36 0%,
+        #1e1f29 70%
+    );
+}
+
+* { 
+    margin: 0; padding: 0; box-sizing: border-box; 
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    height: calc( 100vh - 68px );
+    margin-top: 68px;
+    white-space: nowrap;
+    background: var(--body);
+    background: #2e2f39;
+    background: #15161c;
+}
+
+app {
+    display: block;
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+}
+
+appbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 68px;
+    padding: 0 16px;
+    position: fixed;
+    top: 0; left: 0;
+    background: #15161c;
+    box-shadow: #00000050 0 0 5px 2px;
+    color: #ccc;
+    white-space: nowrap;
+    user-select: none;
+    z-index: 6;
+}
+
+appbar-left, appbar-right {
+    display: grid;
+    width: 25px;
+    cursor: pointer;
+}
+
+drawer {
+    display: none;
+    position: fixed;
+    /* top: 68px; left: 0; */
+    top: 0; left: 0;
+    width: 0;
+    width: 68px;
+    overflow: hidden;
+    height: 100%;
+    background: #1e1f2950;
+    backdrop-filter: blur(12px);
+    box-shadow: #00000050 0 0 5px;
+    color: #fff;
+    transition: .3s cubic-bezier(1,-0.45, 0, 1.68);
+    z-index: 9;
+}
+
+drawer-head {
+    display: block;
+    /* place-items: center; */
+    width: 68px;
+    padding: 13px;
+    background: #181923;
+}
+
+profile {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 100%;
+    /* box-shadow: #cccccc50 0 0 0 5px; */
+    /* background: rgb( 174 0 0 ); */
+    /* color: #ff9e00; */
+}
+.drawerswitch { cursor: pointer; }
+
+drawer-body {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* height: calc( 100vh - 202px ); */
+    height: calc( 100% - 136px );
+}
+drawer-body > li {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    border-radius: 24px;
+    border-radius: 0;
+    background: transparent;
+    transition: .3s;
+}
+drawer-body > li:hover {
+    background: #282a36;
+    transition: .7s;
+}
+drawer-body li > pholder {
+    display: flex;
+    align-items: center;
+    width: 68px;
+    padding: 16px 16px;
+    background: #181923;
+}
+drawer-body li > img {
+    width: 35px;
+    height: 35px;
+}
+drawer-body li > option {
+    display: none;
+    width: 100%;
+    padding: 0 8px;
+    cursor: pointer;
+    transition: .5s;
+}
+/* drawer-body li > option:hover {
+    border-radius: 24px;
+    background: #282a36;
+} */
+spaced { display: block; width: 68px; height: 100%; padding: 13px; background: #181923; }
+
+drawer-footer {
+    display: block;
+    /* place-items: center; */
+    width: 68px;
+    height: 68px;
+    margin-bottom: 0;
+    padding: 13px;
+    background: #181923;
+}
+
+sidebar {
+    display: block; 
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 68px;
+    /* background: #000; */
+    overflow-x: hidden;
+    transition: .3s;
+}
+
+details {
+    display: block;
+    width: 100%;
+    /* height: 100%; */
+    padding: 8px 18px 0 0;
+    background: #1e1f29;
+    transition: .3s;
+    user-select: none;
+}
+details[open] {
+    height: calc(content + 8px);
+    transition: .3s;
+}
+
+d-home {
+    padding: 0 0 0 24px;
+    display: block;
+    transition: .3s;
+}
+d-home > * {
+    padding: 8px;
+}
+
+summary {
+    padding: 8px;
+    height: 5ch;
+    cursor: pointer;
+    background: #21222c;
+    transition: .3s;
+}
+menu {
+    cursor: pointer;
+}
+
+details > summary:first-of-type {
+    list-style-type: "";
+}
+/* details[open] > summary:first-of-type {
+    list-style-type: "";
+} */
+
+    </style>
 </head>
   <body>
     <appbar>
@@ -47,36 +277,166 @@
             </li>
             <spaced></spaced>
             <sidebar>
-            <details>
-                <summary>Selecionando elementos</summary>
-                <menu>getElementById</menu>
-                <menu>getElementByClassName</menu>
-                <menu>getElementByTagName</menu>
-                <menu>querySelector</menu>
-                <menu>querySelectorAll</menu>
-                <menu>Qual usar?</menu>
-            </details>
-            
-            <details id="ManipulandoConteudos">
-                <summary>Manipulando conteúdos</summary>
-                <p></p>
-                <pp></pp>
-                <pp></pp>
-                <p></p>
-            </details>
-        </sidebar>
+                <details>
+                    <summary>Selecionando elementos</summary>
+                    <d-home>
+                        <menu>getElementById</menu>
+                        <menu>getElementByClassName</menu>
+                        <menu>getElementByTagName</menu>
+                        <menu>querySelector</menu>
+                        <menu>querySelectorAll</menu>
+                        <menu>Qual usar?</menu>
+                    </d-home>
+                </details>
+                
+                <details>
+                    <summary>Manipulando conteúdos</summary>
+                    <d-home>
+                        <menu>textContent</menu>
+                        <menu>innerText</menu>
+                        <menu>innerHTML</menu>
+                        <menu>Value</menu>
+                        <menu>Manipulando atributos</menu>
+                    </d-home>
+                </details>
+
+                <details>
+                    <summary>Manipulando estilos e classes</summary>
+                    <d-home>
+                        <menu>Alterando estilos com style</menu>
+                        <menu>classList</menu>
+                    </d-home>
+                </details>
+
+                <details>
+                    <summary>Navegando pelos elementos</summary>
+                    <d-home>
+                        <menu>parentElement e parentNode</menu>
+                        <menu>Pegando elementos filhos</menu>
+                        <menu>Buscando irmãos</menu>
+                    </d-home>
+                </details>
+
+                <details>
+                    <summary>Criando e adicionando elementos na página</summary>
+                    <d-home>
+                        <menu>Criando e adicionando elementos na página</menu>
+                        <menu>insertBefore</menu>
+                    </d-home>
+                </details>
+
+                <details>
+                    <summary>Eventos</summary>
+                    <d-home>
+                        <menu>Adicionando eventos via HTML</menu>
+                        <menu>Eventos de teclado</menu>
+                        <menu>Adicionando eventos via JS</menu>
+                        <menu>Adicionando eventos via JS (Outro método)</menu>
+                        <menu>Argumento event</menu>
+                    </d-home>
+                </details>
+
+                <details>
+                    <summary>Praticando</summary>
+                    <d-home>
+                        <menu>Desafio modal</menu>
+                        <menu>Resolução desafio modal</menu>
+                        <menu>Despedida</menu>
+                    </d-home>
+                </details>
+            </sidebar>
         </drawer-body>
         <drawer-footer></drawer-footer>
     </drawer>
     <app></app>
     <!-- <script src="src/assets/scripts/main.js"></script> -->
-    <script>
+    <!-- <script>
         var loadjs = document.createElement( "script" );
         var mainjs = document.createElement( "script" );
         loadjs.src = "./src/assets/scripts/js.js";
         mainjs.src = "./main.js";
         document.body.appendChild( loadjs );
         document.body.appendChild( mainjs );
+    </script> -->
+    <script>  /* ----------------------------------------------- main.js */
+window.addEventListener( "load", () => {
+    var app = document.querySelector( "app" );
+    
+    app.innerHTML = `
+    <h1>Hello Vite!</h1>
+    <a href="https://vitejs.dev/guide/features.html" target="_blank">Documentation</a>
+    `;
+} )
+    </script>
+    <script>  /* ----------------------------------------------- js.js */
+
+window.addEventListener( "load", () => {
+
+var drawerSwitch = document.querySelector( ".drawerswitch" );
+var drawerToggle = document.querySelector( ".drawertoggle" );
+var menu3 = document.querySelector( ".menu3" );
+var sidebar = document.querySelector( "sidebar" );
+var options = document.querySelectorAll( "option" );
+var drawer = document.querySelector( "drawer" );
+var drawerObserver = 0;
+
+function toggle( v ) {
+    const bkp = v.getAttribute("display");
+    
+    if( v.style.display !== "none" ) {
+        v.style.display = "none";
+    } else {
+        v.style.display = bkp;
+    }
+}
+
+function print( v ) { console.log( v ); }
+// drawer.style.width = "0";
+
+
+drawerSwitch.addEventListener( "click", () => {
+    switch( drawer.style.width ) {
+        case "": drawer.style.width = "350px";
+                 options.forEach( el => el.style.display = "block" );
+            break;
+        case "68px": drawer.style.width = "350px";
+                     options.forEach( el => el.style.display = "block" );
+            break;
+        case "350px": drawer.style.width = "68px";
+                      options.forEach( el => el.style.display = "none" );
+            break;
+    }
+} );
+
+drawerToggle.addEventListener( "click", () => {
+    switch( drawerObserver ) {
+        case 0: drawer.style.width = "68px";
+                drawer.style.display = "block";
+                drawerObserver = 2;
+                options.forEach( el => el.style.display = "none" );
+            break;
+        case 1: drawer.style.width = "68px";
+                drawer.style.display = "block";
+                drawerObserver = 2;
+                options.forEach( el => el.style.display = "none" );
+            break;
+        case 2: drawer.style.width = "0";
+                drawer.style.display = "none";
+                drawerObserver = 1;
+                options.forEach( el => el.style.display = "none" );
+            break;
+    }
+    // toggle( drawer );
+    // drawer.style.width = "68px";
+} );
+
+menu3.addEventListener( "click", () => {
+    toggle( sidebar );
+} );
+
+
+
+} );
     </script>
   </body>
 </html>
